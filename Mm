@@ -1,1 +1,80 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .wrong {
+            background-color: #FF5733;
+            color: white;
+        }
+        #message {
+            display: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="quiz">
+        <h2>Which thing of yours do I love the most?</h2>
+        <button class="wrong" onclick="wrongAnswer()">A) Hair</button>
+        <button class="correct" onclick="correctAnswer()">B) Smile</button>
+        <button class="wrong" onclick="wrongAnswer()">C) Name</button>
+        <button class="wrong" onclick="wrongAnswer()">D) Anger</button>
+    </div>
+
+    <div class="container" id="message">
+        <h2 id="resultText"></h2>
+    </div>
+
+    <script>
+        function correctAnswer() {
+            document.getElementById("quiz").style.display = "none";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("resultText").innerText = "You know me very well, we should date!";
+        }
+
+        function wrongAnswer() {
+            document.getElementById("quiz").style.display = "none";
+            document.getElementById("message").style.display = "block";
+            document.getElementById("resultText").innerText = "Your smile is the best thing in the world.";
+        }
+    </script>
+
+</body>
+</html>
